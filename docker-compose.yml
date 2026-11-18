@@ -1,0 +1,16 @@
+services:
+  signalboard:
+    build: .
+    ports: ["8000:8000"]
+    env_file: .env          # copy .env.example to .env first
+    restart: unless-stopped
+
+  # Optional: a local Splunk for trying live mode. Uncomment, then set in .env:
+  #   SPLUNK_MODE=live  SPLUNK_HOST=splunk  SPLUNK_USERNAME=admin  SPLUNK_PASSWORD=ChangeMe123!
+  #   SPLUNK_VERIFY_SSL=false
+  # splunk:
+  #   image: splunk/splunk:latest
+  #   environment:
+  #     SPLUNK_START_ARGS: --accept-license
+  #     SPLUNK_PASSWORD: ChangeMe123!
+  #   ports: ["8001:8000", "8089:8089", "8088:8088"]

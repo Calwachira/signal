@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Signalboard</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%232540D9'/%3E%3Cpath d='M6 21l5-7 5 4 6-9 4 5' fill='none' stroke='white' stroke-width='2.6' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <a class="brand" href="#overview">
+      <svg width="28" height="28" viewBox="0 0 32 32" aria-hidden="true"><rect width="32" height="32" rx="8" fill="var(--accent)"/><path d="M6 21l5-7 5 4 6-9 4 5" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      <span>Signalboard</span>
+    </a>
+    <nav class="nav" aria-label="Main">
+      <a href="#overview" data-route="overview"><svg viewBox="0 0 20 20"><path d="M3 11h4v6H3zM8 3h4v14H8zM13 7h4v10h-4z"/></svg>Overview</a>
+      <a href="#search" data-route="search"><svg viewBox="0 0 20 20"><circle cx="9" cy="9" r="5.5"/><path d="M13.5 13.5L17 17"/></svg>Search</a>
+      <a href="#alerts" data-route="alerts"><svg viewBox="0 0 20 20"><path d="M10 3a5 5 0 00-5 5v3l-1.5 3h13L15 11V8a5 5 0 00-5-5zM8 16.5a2 2 0 004 0"/></svg>Alerts<span class="badge" id="alert-badge" hidden></span></a>
+      <a href="#settings" data-route="settings"><svg viewBox="0 0 20 20"><circle cx="10" cy="10" r="2.6"/><path d="M10 2.5v2.2M10 15.3v2.2M2.5 10h2.2M15.3 10h2.2M4.7 4.7l1.6 1.6M13.7 13.7l1.6 1.6M4.7 15.3l1.6-1.6M13.7 6.3l1.6-1.6"/></svg>Settings</a>
+    </nav>
+    <div class="side-foot">
+      <div class="conn" id="conn"><span class="dot"></span><span id="conn-text">Checking…</span></div>
+      <button class="ghost" id="theme" type="button">Switch theme</button>
+    </div>
+  </aside>
+  <main id="view" tabindex="-1"></main>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<script type="module" src="app.js"></script>
+</body>
+</html>
